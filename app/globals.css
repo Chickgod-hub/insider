@@ -1,0 +1,11 @@
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% 0,#2a1a3a,#0e0b14 60%);color:#f3ead9;font-family:Georgia,serif;min-height:100vh}
+main{max-width:480px;margin:0 auto;padding:20px 16px 40px}h1{font-size:3.4rem;letter-spacing:.2em;text-align:center;margin:.4em 0 0}
+.sub{text-align:center;opacity:.7;margin-bottom:24px}.card{background:#f3ead9;color:#1b1424;border-radius:20px;padding:18px;margin:14px 0;box-shadow:0 10px 30px #0008;animation:pop .35s ease}
+@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.97)}}.card h2{margin:0 0 8px;font-size:1.3rem}
+input,select{width:100%;padding:14px;border-radius:12px;border:2px solid #cfc3ad;font-size:1.05rem;margin:6px 0;background:#fff}
+.btn{width:100%;padding:16px;border:0;border-radius:14px;font-size:1.1rem;font-weight:700;background:#7c3aed;color:#fff;margin:6px 0;cursor:pointer}
+.btn.red{background:#c0392b}.btn.ghost{background:transparent;color:inherit;border:2px solid currentColor}.btn:disabled{opacity:.4}
+.row{display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid #0001}
+.timer{font-size:3rem;text-align:center;font-variant-numeric:tabular-nums}.warn{color:#c0392b}.err{background:#c0392b;color:#fff;padding:12px;border-radius:12px;margin:10px 0}
+.big{font-size:2.2rem;text-align:center;margin:8px 0}.code{font-size:2rem;letter-spacing:.3em;text-align:center}
+.vote{display:block;width:100%;text-align:left;padding:16px;margin:8px 0;border-radius:14px;border:2px solid #7c3aed;background:#fff;font-size:1.1rem}.vote.sel{background:#7c3aed;color:#fff}
