@@ -17,8 +17,8 @@ const nm=(v:any,id:string)=>v.players.find((p:any)=>p.id===id)?.name??'?'
 export async function act(a:any){
   const d=db(), now=Date.now(); let code=clean(a.code,6).toUpperCase(); let v:any
   const save=async(pubToo=true)=>{
-    if(pubToo) await d.from('rooms').upsert({code,pub:build(v),updated_at:new Date().toISOString()})
-    await d.from('room_private').upsert({code,data:v}) }
+    if(pubToo){ const r1=await d.from('rooms').upsert({code,pub:build(v),updated_at:new Date().toISOString()}); if(r1.error) throw new Err('DB: '+r1.error.message) }
+    const r2=await d.from('room_private').upsert({code,data:v}); if(r2.error) throw new Err('DB: '+r2.error.message) }
   const mk=(name:string)=>({id:rid(),token:rid()+rid(),name,ready:false,seen:now})
   if(a.type==='create'){
     const name=clean(a.name,16)||E('Please enter a display name.')
