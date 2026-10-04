@@ -22,7 +22,7 @@ export async function act(a:any){
   const mk=(name:string)=>({id:rid(),token:rid()+rid(),name,ready:false,seen:now})
   if(a.type==='create'){
     const name=clean(a.name,16)||E('Please enter a display name.')
-    for(let i=0;i<10;i++){ code=Array.from({length:4},()=>pick([...'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'])).join('')
+    for(let i=0;i<10;i++){ code=Array.from({length:4},()=>pick('ABCDEFGHJKLMNPQRSTUVWXYZ23456789'.split(''))).join('')
       const {data}=await d.from('rooms').select('code').eq('code',code).maybeSingle(); if(!data)break }
     const p=mk(name)
     v={phase:'LOBBY',players:[p],host:p.id,category:'Random',questions:[],guesses:[],guessed:false,votes:{},turn:null,endsAt:null,result:null}
